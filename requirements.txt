@@ -1,0 +1,6 @@
+streamlit
+docx2txt
+torch
+numpy
+transformers
+matplotlib
