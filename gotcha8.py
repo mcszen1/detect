@@ -106,7 +106,9 @@ def plot_perplexity_burstiness(perplexity_score, burstiness_score):
 
 # Streamlit Interface
 st.image("NIDLogo.jpg")
-st.title("NID GPT: AI Text Detection in Portuguese")
+st.title("NID GPT: AI Text Detection")
+st.write("Atenção: Envie apenas textos com amostras de até uma lauda, uma lauda e meia no máximo")
+st.write("Amostras maiores do que isso geram erros ao serem processadas.")
 
 # Load the Portuguese GPT-2 model and tokenizer
 try:
@@ -116,7 +118,7 @@ except Exception as e:
     st.error(f"Error loading model: {e}")
 
 # Upload file section
-uploaded_file = st.file_uploader("Upload a Word document (.docx)", type=["docx"])
+uploaded_file = st.file_uploader("Envie um documento do Word (.docx)", type=["docx"])
 
 if uploaded_file is not None:
     # Read and preprocess text
@@ -156,11 +158,6 @@ if uploaded_file is not None:
    
 else:
     st.info("Please upload a .docx file to analyze.")
-
-
-
-  
-
 
 
 
